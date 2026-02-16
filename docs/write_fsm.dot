@@ -1,0 +1,30 @@
+digraph myFSM{
+    rankdir = LR;
+    start [shape = point];
+
+    node [shape = circle];
+    idle [fillcolor = lightgreen, style = filled];
+    got_aw [fillcolor = lightcyan, style = filled];
+    got_w [fillcolor = lightyellow, style = filled];
+
+    node [shape = circle];
+    resp [fillcolor = tan, style = filled];
+
+    //transitions
+    start -> idle [label = "reset"];
+    idle -> got_aw [label = "aw_hs"];
+    idle -> got_w [label = "w_hs"];
+    idle -> resp [label = "aw_hs && w_hs"];
+    got_aw -> resp [label = "w_hs"];
+    got_w -> resp [label = "aw_hs"];
+    resp -> idle [label = "b_hs"];
+
+    legend [shape=box, style=filled, fillcolor=lightcoral,
+        label="aw_hs = awvalid && awready\nw_hs = wvalid && wready\nb_hs = bvalid && bready",
+        margin="0.2,0.1"];
+
+    legend -> idle [style=invis];
+
+    {rank = same;legend;idle;}
+
+}
