@@ -31,9 +31,9 @@ The Moore-style FSM for the write channel and the respective transistions are sh
 </p>
 
 ## Read Channel
-Flow control is handled with a single assignment:
-        assign arready = ~rvalid;
-This prevents a new read address from being accepted while a read response is pending, enforcing the single-outstanding-transaction requirement without a full FSM.
+The read channel uses a flag-based approach. 
+After the AR handshake, the read address is latched and rvalid is asserted. 
+Flow control is handled via assign arready = ~rvalid (refer the flow control section for details.)
 
 rresp returns OKAY (2'b00) on success, SLVERR (2'b10) on invalid address. Transaction completes regardless, per spec.
 
