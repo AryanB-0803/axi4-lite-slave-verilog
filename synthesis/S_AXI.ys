@@ -1,0 +1,9 @@
+read_verilog S_AXI_TOP.v
+hierarchy -top S_AXI_TOP
+proc
+opt
+techmap
+opt
+abc -liberty ~/GF180_libs/gf180mcu_fd_sc_mcu7t5v0__ff_125C_1v98.lib
+dfflibmap -liberty ~/GF180_libs/gf180mcu_fd_sc_mcu7t5v0__ff_125C_1v98.lib 
+stat -liberty ~/GF180_libs/gf180mcu_fd_sc_mcu7t5v0__ff_125C_1v98.lib 
