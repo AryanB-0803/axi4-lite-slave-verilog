@@ -40,8 +40,8 @@ If both awvalid and awready are high i.e awvalid && awready then the AW handshak
 The transition is --> idle to got_aw iff awvalid && awready
 
 If the "wvalid" signal is thrown first by the master along with the data to be written which is signified by the "wdata" signal, the slave must throw a "wready" signal when it is ready to accept the write data.
-The write data is stored in a 32-bit register named "latched_data_w". This is done because the actual write operation occurs in the upcoming stages when both AW transaction and W transaction are completeso we have to store the wdata -
-- temporarily in a register.
+The write data is stored in a 32-bit register named "latched_data_w". This is done because the actual write operation occurs in the upcoming stages when both AW transaction and W transaction are completeso we have to store the wdata
+temporarily in a register.
 If both wvalid and wready are high i.e wvalid && wready then the W handshake completes.
 The transition is --> idle to got_w iff wvalid && wready.
 
