@@ -33,7 +33,7 @@ The Moore-style FSM for the write channel and the respective transistions are sh
 ## Read Channel
 The read channel uses a flag-based approach. 
 After the AR handshake, the read address is latched and rvalid is asserted. 
-Flow control is handled via assign arready = ~rvalid (refer the flow control section for details.)
+Flow control is handled via assign arready = ~rvalid (refer to the flow control section for details.)
 
 rresp returns OKAY (2'b00) on success, SLVERR (2'b10) on invalid address. Transaction completes regardless, per spec.
 
