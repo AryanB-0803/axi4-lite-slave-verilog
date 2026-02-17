@@ -75,9 +75,9 @@ The design was verified using a behavioral testbench that covers:
 Tools used are - iverilog (for simulation) and GTKWave (for waveform analysis)
 
 The iverilog commands are as follows :
-   iverilog -o s_axi.vvp S_AXI_TOP.v S_AXI_tb.v
-   vvp s_axi.vvp
-   gtkwave s_axi.vcd
+  - iverilog -o s_axi.vvp S_AXI_TOP.v S_AXI_tb.v
+  - vvp s_axi.vvp
+  - gtkwave s_axi.vcd
    
 The waveform generated after the simulation is as shown below : 
 
