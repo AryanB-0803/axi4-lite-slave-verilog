@@ -1,5 +1,5 @@
 # axi4-lite-slave-verilog
-AXI4-Lite slave interface in Verilog with FSM-based read/write channels
+Hand-written AXI4-Lite slave with a 4-state Write FSM. Handles decoupled AW/W timing and returns SLVERR for invalid addresses. Includes testbench and VCD waveforms
 
 ## Brief Overview
 An AXI4-Lite slave/subordinate is a protocol designed by ARM under the AMBA (Advanced Microcontroller Bus Architecture) family. It has a few features such as single-outstanding write transaction and independent read and write channels. 
